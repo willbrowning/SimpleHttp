@@ -4,7 +4,6 @@ EXPOSE 80
 
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
-COPY ../SimpleHttp.sln ./
 COPY SimpleHttp.csproj SimpleHttp/
 RUN dotnet restore -nowarn:msb3202,nu1503
 COPY . .
