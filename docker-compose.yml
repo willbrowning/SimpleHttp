@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  simplehttp:
+    image: simplehttp
+    build:
+      context: .
+      dockerfile: SimpleHttp/Dockerfile
