@@ -5,4 +5,4 @@ services:
     image: simplehttp
     build:
       context: .
-      dockerfile: SimpleHttp/Dockerfile
+      dockerfile: Dockerfile
