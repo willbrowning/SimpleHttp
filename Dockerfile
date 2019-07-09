@@ -1,12 +1,12 @@
-FROM microsoft/aspnetcore:2.0 AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM microsoft/aspnetcore-build:2.0 AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
 WORKDIR /src
 COPY SimpleHttp.sln ./
 COPY SimpleHttp/SimpleHttp.csproj SimpleHttp/
-RUN dotnet restore -nowarn:msb3202,nu1503
+RUN dotnet restore
 COPY . .
 WORKDIR /src/SimpleHttp
 RUN dotnet build -c Release -o /app
