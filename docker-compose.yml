@@ -1,8 +1,8 @@
-version: '3'
+version: '3.4'
 
 services:
   simplehttp:
-    image: simplehttp
+    image: ${DOCKER_REGISTRY-}simplehttp
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: SimpleHttp/Dockerfile
